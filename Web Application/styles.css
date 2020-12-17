@@ -4,6 +4,7 @@ body{
 	color: black;
 	font-family: "Comic Sans MS", cursive, sans-serif;
 	text-align: center;
+	background-color: #001f3f;
 	
 	
 }
@@ -31,3 +32,12 @@ div.rt {
 	margin-right:50px;
 
 }
+
+.form-container{
+	margin: auto;
+	width: 40%;
+	
+	padding-top:10px;
+	padding-bottom: 10px;
+}
+

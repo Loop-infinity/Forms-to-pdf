@@ -178,9 +178,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     <!-- CSS -->
     
 	<link rel="stylesheet" href="styles.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
     <title>Form</title>
   </head>
   <body>
+
+    <!-- NavBar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.php">FORM-TO-PDF</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="index.php">Responses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="form.php">Submit Response</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
   <div class="rt" align="right">
 	<a href="index.php">Login</a>
   </div>
@@ -191,11 +215,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
          <form class = "form-response" action = <?php echo htmlspecialchars("form.php"); ?> method = "post" enctype="multipart/form-data">
 			
 		<label for="sname">Full Name</label>	<br>
-		<input type="text" id="sname" name="studentname" value="<?php echo  $name?>" ><br>
+		<input type="text" id="sname" class="form-control" name="studentname" value="<?php echo  $name?>" ><br>
 		<span class="error"> <?php echo $nameErr;?></span> <br>
 		
 		<label for="ag">Age</label>	<br>
-		<input type="text" id="ag" name="age" maxlength="3" value="<?php echo  $age?>"><br>
+		<input type="text" id="ag" class="form-control" name="age" maxlength="3" value="<?php echo  $age?>"><br>
 		<span class="error"> <?php echo $ageErr;?></span>		<br><br>
 		
 		<label>Sex :</label>			
@@ -209,24 +233,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 		<span class="error">* <?php echo $bdateErr;?></span> <br><br> -->
 		
 		<label>Email id</label> <br>
-		<input type="text" id="email" name="email" value="<?php echo  $email?>"><br>
+		<input type="text" id="email" class="form-control" name="email" value="<?php echo  $email?>"><br>
 		<span class="error"> <?php echo $emailErr;?></span>
 		<span id="er"></span><br>
 		
 		<label for="">Address</label><br>
-		<input type="text" name="address" value="<?php echo $address?>"> <br>
+		<input type="text" name="address" class="form-control" value="<?php echo $address?>"> <br>
 		<span class="error"><?php echo $addressErr;?></span> <br>
 		
 		<label for="">Contact No</label>	<br>
-		<input type="text" name="contactno" maxlength="10" value="<?php echo $contactno?>"><br> 
+		<input type="text" name="contactno" class="form-control" maxlength="10" value="<?php echo $contactno?>"><br> 
 		<span class="error"><?php echo $contactnoErr;?></span><br><br>
 		
-		
-		  <input type="file" name="image" style="width: 177px"><br>
-		  <span class="error"> <?php echo $imageErr;?></span><br>
+		<label>Photo</label>
+		<input type="file" name="image" ><br>
+		<span class="error"> <?php echo $imageErr;?></span><br>
 		
 			      
-            <button class = "sub-btn" type = "submit" 
+            <button class = "btn btn-lg btn-primary btn-block" class="" type = "submit" 
                name = "submit">Submit</button><br>
 			
          </form>
